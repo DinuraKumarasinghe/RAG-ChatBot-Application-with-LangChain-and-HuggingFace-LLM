@@ -10,7 +10,7 @@ from langchain.schema.runnable import RunnablePassthrough
 import re
 
 # Set Hugging Face API Token
-os.environ["HF_TOKEN"] = "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"  # Replace with your token
+os.environ["HF_TOKEN"] = "API"  # Replace with your token
 
 # Initialize Hugging Face-compatible LLM
 llm = ChatOpenAI(
