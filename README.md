@@ -32,10 +32,11 @@ All powered by **LangChain**, **HuggingFace**, and **DeepSeek**!
 
 ## 📁 Project Structure
 
-<img width="1818" height="597" alt="Image" src="https://github.com/user-attachments/assets/5e41995a-2e35-4eca-bfb6-576b07e2fde3" />
+
 <img width="1839" height="639" alt="Image" src="https://github.com/user-attachments/assets/e37fa5a6-8eca-48e1-a1fa-ed585d69de8e" />
 <img width="1770" height="570" alt="Image" src="https://github.com/user-attachments/assets/fb044c79-b758-4269-87cc-4f802ef2c715" />
 <img width="1779" height="570" alt="Image" src="https://github.com/user-attachments/assets/35579a14-1b05-44ec-bb8c-2104c5ea6472" />
+<img width="1818" height="597" alt="Image" src="https://github.com/user-attachments/assets/5e41995a-2e35-4eca-bfb6-576b07e2fde3" />
 
 ---
 
