@@ -31,14 +31,6 @@ All powered by **LangChain**, **HuggingFace**, and **DeepSeek**!
 ---
 
 ## 📁 Project Structure
-📁 my-rag-chatbot/
- │
- ├── app.py                      # 🧠 Main script with RAG chain and chatbot loop
- ├── Profile.pdf                 # 📄 The PDF document used for question answering
- ├── requirements.txt            # 📦 Python dependencies
- ├── README.md                   # 📘 Project documentation (this file)
-
-
 
 ---
 
