@@ -1,4 +1,4 @@
-# RAG Q&A Chatbot using DeepSeek + LangChain + HuggingFace
+# RAG Q&A Chatbot using DeepSeek + LangChain + HuggingFace (LLM)
 
 Welcome to my very first Retrieval-Augmented Generation (RAG) application!  
 This chatbot can **read any file** and answer your questions based on its content — just like a smart assistant trained on your own documents.
