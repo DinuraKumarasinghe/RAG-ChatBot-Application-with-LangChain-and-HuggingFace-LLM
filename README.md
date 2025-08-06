@@ -30,19 +30,24 @@ All powered by **LangChain**, **HuggingFace**, and **DeepSeek**!
 
 ---
 
-## 📄 Example Use Case
+## 📁 Project Structure
+📁 my-rag-chatbot/
+│
+├── app.py                      # 🧠 Main script with RAG chain and chatbot loop
+├── Profile.pdf                 # 📄 The PDF document used for question answering
+├── requirements.txt            # 📦 Python dependencies
+├── README.md                   # 📘 Project documentation (this file)
 
-📝 I used my own resume (PDF) and built a chatbot that can answer questions like:
-- “What programming languages do I know?”
-- “What are my key achievements?”
-- “Where did I go to university?”
+
 
 ---
 
-## 📁 Project Structure
+## 🖥️ 1. Terminal Version (CLI)
 
+Run the chatbot in your terminal:
 
-
+```bash
+python app_cli.py
 
 ---
 
