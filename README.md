@@ -62,3 +62,14 @@ sentence-transformers
 chromadb
 pypdf
 transformers
+
+
+
+---
+
+## 🖥️ 1. Terminal Version (CLI)
+
+Run the chatbot in your terminal:
+
+```bash
+rag_chat_application.py
