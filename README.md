@@ -42,34 +42,11 @@ All powered by **LangChain**, **HuggingFace**, and **DeepSeek**!
 
 ---
 
-## 🖥️ 1. Terminal Version (CLI)
-
-Run the chatbot in your terminal:
-
-```bash
-rag_chat_application.py
-
----
-
-### ✅ BONUS: Create a `requirements.txt` file
-
-```txt
-langchain
-langchain-openai
-langchain-community
-langchain-chroma
-sentence-transformers
-chromadb
-pypdf
-transformers
-
-
-
----
-
-## 🖥️ 1. Terminal Version (CLI)
-
-Run the chatbot in your terminal:
-
-```bash
-rag_chat_application.py
+##✅ Skills Demonstrated
+-Retrieval-Augmented Generation (RAG)
+-Prompt engineerin
+-LangChain architecture
+-Embedding models & vector databases
+-Python scripting
+-Frontend integration (Streamlit/Gradio)
+-HuggingFace Inference API
