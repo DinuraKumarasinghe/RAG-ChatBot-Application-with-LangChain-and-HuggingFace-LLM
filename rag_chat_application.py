@@ -10,7 +10,7 @@ from langchain.schema.runnable import RunnablePassthrough
 import re
 
 # Set Hugging Face API Token
-os.environ["HF_TOKEN"] = "Hugging Face API key"  # Replace with your token
+os.environ["HF_TOKEN"] = "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"  # Replace with your token
 
 # Initialize Hugging Face-compatible LLM
 llm = ChatOpenAI(
@@ -18,7 +18,6 @@ llm = ChatOpenAI(
     base_url="https://router.huggingface.co/v1",
     api_key=os.environ["HF_TOKEN"],
     max_tokens=256,
-    streaming=True,
     temperature=0.3
 )
 
@@ -39,7 +38,7 @@ retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
 template = """
 You are a friendly assistant helping the user based on the context below.
 Answer the user's question in a natural, conversational tone.
-Don't include any internal thoughts or explanations — just respond clearly and helpfully.
+
 
 {question}
 
