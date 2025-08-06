@@ -47,7 +47,7 @@ All powered by **LangChain**, **HuggingFace**, and **DeepSeek**!
 Run the chatbot in your terminal:
 
 ```bash
-python app_cli.py
+rag_chat_application.py
 
 ---
 
