@@ -32,21 +32,21 @@ All powered by **LangChain**, **HuggingFace**, and **DeepSeek**!
 
 ## 📁 Project Structure
 📁 my-rag-chatbot/
-│
-├── app.py                      # 🧠 Main script with RAG chain and chatbot loop
-├── Profile.pdf                 # 📄 The PDF document used for question answering
-├── requirements.txt            # 📦 Python dependencies
-├── README.md                   # 📘 Project documentation (this file)
+ │
+ ├── app.py                      # 🧠 Main script with RAG chain and chatbot loop
+ ├── Profile.pdf                 # 📄 The PDF document used for question answering
+ ├── requirements.txt            # 📦 Python dependencies
+ ├── README.md                   # 📘 Project documentation (this file)
 
 
 
 ---
 
 ##✅ Skills Demonstrated
--Retrieval-Augmented Generation (RAG)
--Prompt engineerin
--LangChain architecture
--Embedding models & vector databases
--Python scripting
--Frontend integration (Streamlit/Gradio)
--HuggingFace Inference API
+ - Retrieval-Augmented Generation (RAG)
+ - Prompt engineerin
+ - LangChain architecture
+ - Embedding models & vector databases
+ - Python scripting
+ - Frontend integration (Streamlit/Gradio)
+ - HuggingFace Inference API
