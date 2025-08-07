@@ -48,3 +48,15 @@ All powered by **LangChain**, **HuggingFace**, and **DeepSeek**!
  - Python scripting
  - Frontend integration (Streamlit/Gradio)
  - HuggingFace Inference API
+
+
+## libraries 
+# Install the necessary packages
+!pip install torch -q
+!pip install transformers -q
+!pip install numpy -q
+!pip install langchain -q
+!pip install langchain_community -q
+!pip install langchain-chroma -q
+!pip install sentence_transformers -q
+!pip install langchain-openai -q
