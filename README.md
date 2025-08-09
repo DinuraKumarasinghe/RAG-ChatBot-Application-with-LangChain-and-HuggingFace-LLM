@@ -30,8 +30,9 @@ All powered by **LangChain**, **HuggingFace**, and **DeepSeek**!
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Demo
 
+https://github.com/user-attachments/assets/7e98796f-cbe2-43e2-b29c-b41da0f6d896
 
 <img width="1839" height="639" alt="Image" src="https://github.com/user-attachments/assets/e37fa5a6-8eca-48e1-a1fa-ed585d69de8e" />
 <img width="1770" height="570" alt="Image" src="https://github.com/user-attachments/assets/fb044c79-b758-4269-87cc-4f802ef2c715" />
