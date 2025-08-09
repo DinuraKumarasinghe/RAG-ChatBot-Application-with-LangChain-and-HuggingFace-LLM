@@ -1,0 +1,101 @@
+# rag_chat_app.py
+import os
+import re
+import threading
+import gradio as gr
+from langchain_openai import ChatOpenAI
+from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.schema.output_parser import StrOutputParser
+from langchain_community.document_loaders import PyPDFLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_chroma import Chroma
+from langchain.prompts import ChatPromptTemplate
+from langchain.schema.runnable import RunnablePassthrough
+
+class RagChatBot:
+    def __init__(self):
+        os.environ["HF_TOKEN"] = "API"  # 🔹 Replace with your HF token
+        self.initialize_llm()
+        self.load_documents()
+        self.create_vector_store()
+        self.build_chain()
+    
+    def initialize_llm(self):
+        self.llm = ChatOpenAI(
+            model="deepseek-ai/DeepSeek-R1",
+            base_url="https://router.huggingface.co/v1",
+            api_key=os.environ["HF_TOKEN"],
+            max_tokens=256,
+            temperature=0.3
+        )
+    
+    def load_documents(self):
+        loader = PyPDFLoader("Profile.pdf")
+        docs = loader.load()
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=400, chunk_overlap=50)
+        self.splits = text_splitter.split_documents(docs)
+    
+    def create_vector_store(self):
+        embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+        self.vectorstore = Chroma.from_documents(documents=self.splits, embedding=embedding_model)
+        self.retriever = self.vectorstore.as_retriever(search_kwargs={"k": 3})
+    
+    def build_chain(self):
+        template = """
+        You are a friendly chatbot that helping the user based on the context below.
+        Answer the user's question in a natural, conversational tone.
+        Don't include any internal thoughts or explanations — just respond clearly and helpfully.
+        Don't include data form pdf unless it ask form you.
+
+        {question}
+
+        Context:
+        {context}
+
+        Answer:
+        """
+        prompt = ChatPromptTemplate.from_template(template)
+        
+        self.chain = (
+            {"context": self.retriever, "question": RunnablePassthrough()}
+            | prompt
+            | self.llm
+            | StrOutputParser()
+        )
+    
+    def get_response(self, question):
+        try:
+            response = self.chain.invoke(question)
+            return re.sub(r"<think>.*?</think>", "", response, flags=re.DOTALL).strip()
+        except Exception as e:
+            return f"⚠️ Error: {str(e)}"
+
+# ---------------------- Gradio Interface ----------------------
+bot = RagChatBot()
+
+def chat_fn(message, history):
+    # User's message (right side)
+    history.append((message, None))
+    yield history, history
+
+    # Bot's response (left side)
+    response = bot.get_response(message)
+    history[-1] = (message, response)
+    yield history, history
+
+with gr.Blocks(css="""
+    .welcome { text-align: center; font-size: 20px; color: #444; margin: 20px 0; }
+    .message.user { background-color: #DCF8C6; color: black; padding: 8px; border-radius: 10px; max-width: 70%; margin-left: auto; }
+    .message.bot { background-color: #F1F0F0; color: black; padding: 8px; border-radius: 10px; max-width: 70%; margin-right: auto; }
+""") as demo:
+    
+    gr.HTML("<div class='welcome'>🤖 <b>Welcome!</b> I’m your friendly PDF Chat Assistant.<br>Ask me anything!</div>")
+    
+    chatbot = gr.Chatbot(height=500, bubble_full_width=False, show_label=False)
+    msg = gr.Textbox(placeholder="Type your message here and press Enter...")
+    clear = gr.Button("Clear Chat")
+    
+    msg.submit(chat_fn, [msg, chatbot], [chatbot, chatbot])
+    clear.click(lambda: [], None, chatbot, queue=False)
+
+demo.launch(share=True)
