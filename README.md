@@ -32,7 +32,7 @@ All powered by **LangChain**, **HuggingFace**, and **DeepSeek**!
 
 ## 📁 Project Demo
 
-https://github.com/user-attachments/assets/7e98796f-cbe2-43e2-b29c-b41da0f6d896
+https://github.com/user-attachments/assets/191b7f96-776f-4f44-8689-58410afa23ff
 
 <img width="1839" height="639" alt="Image" src="https://github.com/user-attachments/assets/e37fa5a6-8eca-48e1-a1fa-ed585d69de8e" />
 <img width="1770" height="570" alt="Image" src="https://github.com/user-attachments/assets/fb044c79-b758-4269-87cc-4f802ef2c715" />
